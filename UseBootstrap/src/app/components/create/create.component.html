@@ -1,0 +1,28 @@
+<form style="margin: 0 auto;margin-top: 100px;width: 20%;">
+    @if(!isSubmitted){
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" [(ngModel)]="setValue.name" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your email</label>
+          <input type="text" [(ngModel)]="setValue.email" name="email" class="form-control">
+
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Your password</label>
+          <input type="text" [(ngModel)]="setValue.password" name="passwrod" class="form-control" id="passwrod">
+        </div>
+        <div class="mb-3">
+          <label for="login" class="form-label">Your login</label>
+          <input type="text" [(ngModel)]="setValue.login" name="login" class="form-control" id="login">
+        </div>
+            <div class="mb-3">
+          <label for="role" class="form-label">Your Role</label>
+          <input type="text" [(ngModel)]="setValue.role" name="role" class="form-control" id="role">
+        </div>
+        <button type="submit" (click)="setUser()" class="btn btn-primary">Submit</button>  
+    } @else {
+        <h1>Ma'lumot yaratildi</h1>
+    }
+</form>

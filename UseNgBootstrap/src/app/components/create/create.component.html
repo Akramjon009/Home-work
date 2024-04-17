@@ -1,0 +1,15 @@
+<form style="margin: 0 auto;margin-top: 100px;width: 20%;">
+    @if(!isSubmitted){
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" [(ngModel)]="setValue.name" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Your Age</label>
+          <input type="number" [(ngModel)]="setValue.age" name="age" class="form-control" id="age">
+        </div>
+        <button type="submit" (click)="setUser()" class="btn btn-primary">Submit</button>  
+    } @else {
+        <h1>Ma'lumot yaratildi</h1>
+    }
+</form>
