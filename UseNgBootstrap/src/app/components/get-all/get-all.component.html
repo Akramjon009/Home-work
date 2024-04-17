@@ -1,16 +1,18 @@
-<table class="table table-striped" style="width: 30%;margin: 0 auto;">
-	<thead>
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">Name</th>
-			<th scope="col">Age</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let user of users; let i = index">
-      		<th scope="row">{{ i + 1 }}</th> 
-      		<td>{{ user.name }}</td> 
-      		<td>{{ user.age }}</td> 
-    	</tr>
-	</tbody>
+<table class="table table-striped" style="width: 30%; margin: 0 auto">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+    </tr>
+  </tbody>
 </table>

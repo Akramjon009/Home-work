@@ -5,21 +5,20 @@ import { User } from '../models/user';
 import { CreateUser } from '../models/create-user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CrudService {
+  baseUrl: string = 'https://localhost:7226/api/Users';
 
-  baseUrl: string = "https://localhost:7023/api/PersonCRUD/";
-
-  constructor(private http : HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   user?: User;
 
-  getAll(): Observable<User[]> { 
-    return this.http.get<User[]>(this.baseUrl + 'GetPersons');
+  getAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl);
   }
 
   create(data: CreateUser): Observable<CreateUser> {
-    return this.http.post<User>(this.baseUrl + 'InsertPerson', data);
+    return this.http.post<User>(this.baseUrl, data);
   }
 }

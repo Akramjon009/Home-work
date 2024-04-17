@@ -5,18 +5,21 @@ import { CrudService } from '../../serices/crud.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrl: './create.component.css'
+  styleUrl: './create.component.css',
 })
-export class CreateComponent implements OnInit{
+export class CreateComponent implements OnInit {
   isSubmitted: boolean = false;
 
   resultData!: CreateUser;
 
   constructor(private crudService: CrudService) {}
 
-  setValue : CreateUser = {
-    name: "",
-    age: 0
+  setValue: CreateUser = {
+    name: '',
+    email: '',
+    password: '',
+    login: '',
+    role: '',
   };
 
   ngOnInit(): void {
@@ -32,11 +35,11 @@ export class CreateComponent implements OnInit{
       },
       error: (err) => {
         console.log(`Error ketti: ${err}`);
-      }
+      },
     });
   }
 
-  setUser(){
+  setUser() {
     this.createUser(this.setValue);
   }
 }

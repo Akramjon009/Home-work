@@ -1,15 +1,60 @@
-<form style="margin: 0 auto;margin-top: 100px;width: 20%;">
-    @if(!isSubmitted){
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" [(ngModel)]="setValue.name" class="form-control" id="name" name="name">
-        </div>
-        <div class="mb-3">
-          <label for="age" class="form-label">Your Age</label>
-          <input type="number" [(ngModel)]="setValue.age" name="age" class="form-control" id="age">
-        </div>
-        <button type="submit" (click)="setUser()" class="btn btn-primary">Submit</button>  
-    } @else {
-        <h1>Ma'lumot yaratildi</h1>
-    }
+<form style="margin: 0 auto; margin-top: 100px; width: 20%">
+  @if(!isSubmitted){
+  <div class="mb-3">
+    <label for="name" class="form-label">Your Name</label>
+    <input
+      type="text"
+      [(ngModel)]="setValue.name"
+      class="form-control"
+      id="name"
+      name="name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Your Email</label>
+    <input
+      type="textr"
+      [(ngModel)]="setValue.email"
+      name="email"
+      class="form-control"
+      id="email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Your Password</label>
+    <input
+      type="textr"
+      [(ngModel)]="setValue.password"
+      name="password"
+      class="form-control"
+      id="password"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="login" class="form-label">Your Login</label>
+    <input
+      type="textr"
+      [(ngModel)]="setValue.login"
+      name="login"
+      class="form-control"
+      id="login"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="role" class="form-label">Your Role</label>
+    <input
+      type="textr"
+      [(ngModel)]="setValue.role"
+      name="role"
+      class="form-control"
+      id="role"
+    />
+  </div>
+
+  <button type="submit" (click)="setUser()" class="btn btn-primary">
+    Submit
+  </button>
+  } @else {
+  <h1>Ma'lumot yaratildi</h1>
+  }
 </form>

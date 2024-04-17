@@ -5,16 +5,22 @@ import { CreateUser } from '../../models/create-user';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrl: './create.component.css'
+  styleUrl: './create.component.css',
 })
-export class CreateComponent implements OnInit{
+export class CreateComponent implements OnInit {
   isSubmitted: boolean = false;
 
   resultData!: CreateUser;
 
-  setValue!: CreateUser;
+  setValue: CreateUser = {
+    name: '',
+    email: '',
+    password: '',
+    login: '',
+    role: '',
+  };
 
-  constructor(private crudService : CrudService) {}
+  constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     throw new Error('Method not impelemented.');
@@ -29,11 +35,11 @@ export class CreateComponent implements OnInit{
       },
       error: (err) => {
         console.log(`Error ketti: ${err}`);
-      }
+      },
     });
   }
 
-  setUser(){
+  setUser() {
     this.createUser(this.setValue);
   }
 }
